@@ -1,4 +1,7 @@
 package com.ssinitsa.telegram.bot.repository;
 
-public class AnswerRepository {
+import com.ssinitsa.telegram.bot.entity.Answer;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface AnswerRepository extends JpaRepository<Answer, Long> {
 }

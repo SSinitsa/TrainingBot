@@ -1,4 +1,7 @@
 package com.ssinitsa.telegram.bot.repository;
 
-public interface TGMessageRepository {
+import com.ssinitsa.telegram.bot.entity.TGMessage;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TGMessageRepository extends JpaRepository<TGMessage, Long> {
 }

@@ -1,4 +1,7 @@
 package com.ssinitsa.telegram.bot.entity;
 
-public class StepType {
+public enum StepType {
+
+    TEST, MATERIALS, MESSAGE
+
 }
