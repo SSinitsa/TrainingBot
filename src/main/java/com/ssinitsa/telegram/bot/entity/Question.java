@@ -2,6 +2,8 @@ package com.ssinitsa.telegram.bot.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.util.List;
@@ -19,25 +21,22 @@ public class Question extends AbstractEntity {
     @Column
     private String title;
 
+    @Column
+    private String text;
+
     @Enumerated(EnumType.STRING)
     private QuestionType type;
+
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany
+    private List<Materials> materials;
 
     @Column
     private int number;
 
-    @Column
-    private String video;
-
-    @Column
-    private String image;
-
     @ManyToOne
     @JoinColumn
-    private TGMessage rightMessage;
-
-    @ManyToOne
-    @JoinColumn
-    private TGMessage wrongMessage;
+    private Materials attachment;
 
     @OneToMany
     private List<Answer> answers;

@@ -18,7 +18,13 @@ public class Bot extends AbstractEntity {
     @Column (unique = true, nullable = false)
     private String name;
 
+    @Column
+    private String token;
+
     @OneToMany
-    private List<Step> steps;
+    private List<Test> tests;
+
+    @OneToMany
+    private List<Student> students;
 
 }

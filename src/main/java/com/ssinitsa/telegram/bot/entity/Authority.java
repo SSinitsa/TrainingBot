@@ -21,4 +21,11 @@ public class Authority extends AbstractEntity implements GrantedAuthority {
     public String getAuthority() {
         return this.authority;
     }
+
+    @Override
+    public String toString() {
+        return "Authority{" +
+                "authority='" + authority + '\'' +
+                '}';
+    }
 }

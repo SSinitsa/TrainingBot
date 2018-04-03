@@ -2,6 +2,6 @@ package com.ssinitsa.telegram.bot.entity;
 
 public enum QuestionType {
 
-    SINGLE, MULTI, SORT, INPUT
+    SINGLE, MULTI, SORT, INPUT, MATERIALS
 
 }

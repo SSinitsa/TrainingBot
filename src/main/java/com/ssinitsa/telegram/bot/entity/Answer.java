@@ -19,9 +19,12 @@ public class Answer extends AbstractEntity {
     private Boolean correct;
 
     @Column
-    private Integer number;
+    private String button;
 
     @Column
     private String value;
+
+    @Column
+    private Integer score;
 
 }

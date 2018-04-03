@@ -9,13 +9,12 @@ import javax.persistence.*;
 @Setter
 @Table(name="tg_message")
 @Entity
-public class TGMessage extends AbstractEntity{
+public class TgMessage extends AbstractEntity{
 
     @Column
     private String text;
 
-    @ManyToOne
-    @JoinColumn
+    @Enumerated(EnumType.STRING)
     private MessageType type;
 
 }

@@ -2,12 +2,15 @@ package com.ssinitsa.telegram.bot.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
-@Table(name ="user_attachment")
+@Table(name = "user_attachment")
 @Entity
 public class UserAttachment extends AbstractEntity {
 
@@ -16,16 +19,12 @@ public class UserAttachment extends AbstractEntity {
     private Student student;
 
     @ManyToOne
-    @JoinColumn
-    private Step step;
+    private Question question;
 
     @Column
     private String text;
 
-    @Column
-    private String video;
-
-    @Column
-    private String image;
-
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany
+    private List<Materials> materials;
 }
